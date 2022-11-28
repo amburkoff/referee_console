@@ -164,7 +164,7 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
-catkin_install_python(PROGRAMS scripts/talker.py scripts/listener.py scripts/referee.py
+catkin_install_python(PROGRAMS scripts/talker.py scripts/listener.py scripts/referee.py scripts/mission_autorace_2020_referee.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 ## Mark executables for installation
