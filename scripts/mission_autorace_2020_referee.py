@@ -46,7 +46,8 @@ class ControlMission():
     def callback_robot_finish(self, data):
         self.time_robot_finish = rospy.get_time()
         rospy.loginfo("Time for the robot to complete the competition Name_team=%s Ros_now=%f Duration=%f", data.data , self.time_robot_finish, self.time_robot_finish - self.time_robot_start)
-
+        rospy.signal_shutdown('shutdown')
+        
     def getOdom(self, msg):
         pose_x = msg.pose.pose.position.x
         pose_y = msg.pose.pose.position.y
@@ -215,7 +216,7 @@ class ControlMission():
                                      self.initial_pose, "world")
                     del_model_prox = rospy.ServiceProxy('gazebo/delete_model', DeleteModel)
                     del_model_prox('up_bar')
-                    rospy.signal_shutdown('shutdown')
+                    #rospy.signal_shutdown('shutdown')
             self.rate.sleep()
 
 def main():
